@@ -1,0 +1,13 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: fortifai-cluster
+  region: eu-north-1
+nodeGroups:
+  - name: api-gateway-ng
+    instanceType: t3.medium
+    desiredCapacity: 2
+    minSize: 1
+    maxSize: 3
+    labels:
+      layer: api-gateway

@@ -1,0 +1,17 @@
+{
+  "name": "fortifai-be",
+  "version": "1.0.0",
+  "description": "FortifAI Backend",
+  "main": "index.js",
+  "scripts": {
+    "sync": "node scripts/sync-assets.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cloudwatch": "^3.777.0",
+    "@aws-sdk/client-ec2": "^3.777.0",
+    "@aws-sdk/client-iam": "^3.777.0",
+    "@aws-sdk/client-kms": "^3.777.0",
+    "@aws-sdk/client-s3": "^3.777.0",
+    "axios": "^1.8.4"
+  }
+}

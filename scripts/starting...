@@ -1,0 +1,399 @@
+Script started on Tue Apr  1 12:03:19 2025
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+c2] Starting sync process...
+[ec2] Fetching existi[?1034h]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;Bc2] Starting sync process...
+bash: c2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Fetching existing assets from database...
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Fetching page 1...
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Page 1 response status: 200
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Response data: {
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  status: 200,
+bash: status:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  statusText: 'OK',
+bash: statusText:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  headers: Object [AxiosHeaders] {
+bash: headers:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    date: 'Tue, 01 Apr 2025 09:01:01 GMT',
+bash: date:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    'content-type': 'application/json',
+bash: content-type:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    'content-length': '207',
+bash: content-length:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    connection: 'keep-alive',
+bash: connection:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    'strict-transport-security': 'max-age=31536000; includeSubDomains'
+bash: strict-transport-security:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  },
+bash: },: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  data: { detail: [ [Object] ] }
+bash: data:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B}
+bash: syntax error near unexpected token `}'
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Extracted responseData: {
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  detail: [
+bash: detail:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    {
+>       type: 'int_parsing',
+>       loc: [Array],
+>       msg: 'Input should be a valid integer, unable to parse string as an integer',
+>       input: 'ec2',
+>       url: 'https://errors.pydantic.dev/2.6/v/int_parsing'
+>     }
+bash: type:: command not found
+bash: loc:: command not found
+bash: msg:: command not found
+bash: input:: command not found
+bash: url:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  ]
+bash: ]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B}
+bash: syntax error near unexpected token `}'
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] ResponseData type: object
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Is responseData an array? false
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Response data is not an array, skipping
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Total assets from DB: 0
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Created map of 0 existing assets
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Starting AWS asset fetch...
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Fetching AWS assets with token: none
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Fetched 5 AWS assets
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Processing asset: i-0c214fe7ecc460890
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Creating new asset: i-0c214fe7ecc460890
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Request payload: {
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "UniqueId": "i-0c214fe7ecc460890",
+bash: UniqueId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "IsStale": false,
+bash: IsStale:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "Tags": {
+bash: Tags:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "Name": "agent01"
+bash: Name:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  },
+bash: },: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "InstanceId": "i-0c214fe7ecc460890",
+bash: InstanceId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "InstanceType": "t3.micro",
+bash: InstanceType:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "State": "stopped",
+bash: State:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "VpcId": "vpc-0b322ab881b1d5555",
+bash: VpcId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "SubnetId": "subnet-02294c98f5bb33736",
+bash: SubnetId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "SecurityGroups": [
+bash: SecurityGroups:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "sg-07d6ed7b15f5e7f32"
+bash: sg-07d6ed7b15f5e7f32: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  ]
+bash: ]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B}
+bash: syntax error near unexpected token `}'
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Asset creation response: 200 {
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  detail: [
+bash: detail:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    {
+>       type: 'list_type',
+>       loc: [Array],
+>       msg: 'Input should be a valid list',
+>       input: [Object],
+>       url: 'https://errors.pydantic.dev/2.6/v/list_type'
+>     }
+bash: type:: command not found
+bash: loc:: command not found
+  ]
+}
+[ec2] Processing asset: i-0ee669075f9eaa378
+[ec2] Creating new asset: i-0ee669075f9eaa3bash: msg:: command not found
+bash: input:: command not found
+78
+[ec2] Request payload: {
+  "UniqueId": "i-0ee66bash: url:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  ]
+bash: ]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B}
+bash: syntax error near unexpected token `}'
+[ec2] Processing asset: i-0ee669075f9eaa378
+[ec2] Creating new asset: i-0ee669075f9eaa378
+[ec2] Request payload: {
+  "UniqueId": "i-0ee669075f9eaa378",
+  "IsStale": false,
+  "Tags": {
+   ]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Processing asset: i-0ee669075f9eaa378
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Creating new asset: i-0ee669075f9eaa378
+bash: [ec2]: command not found
+[ec2] Request payload: {
+  "UniqueId": "i-0ee669075f9eaa378",
+  "IsStale": false,
+  "Tags": {
+    "Name": "agent01"
+  },
+  "InstanceId": "i-0ee6690]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Request payload: {
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "UniqueId": "i-0ee669075f9eaa378",
+bash: UniqueId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "IsStale": false,
+bash: IsStale:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "Tags": {
+bash: Tags:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "Name": "agent01"
+  },
+  "InstanceId": "i-0ee669075f9eaa378",
+  "InstanceType": "t3.micro",
+  "Statbash: Name:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  },
+bash: },: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "InstanceId": "i-0ee669075f9eaa378",
+bash: InstanceId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "InstanceType": "t3.micro",
+bash: InstanceType:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "State": "running",
+bash: State:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "VpcId": "vpc-01e8afe5e74576696",
+bash: VpcId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "SubnetId": "subnet-02c33b5524f27c44f",
+bash: SubnetId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "SecurityGroups": [
+bash: SecurityGroups:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "sg-047e688213d52d513"
+bash: sg-047e688213d52d513: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  ]
+bash: ]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B}
+bash: syntax error near unexpected token `}'
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Asset creation response: 200 {
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  detail: [
+bash: detail:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    {
+>       type: 'list_type',
+>       loc: [Array],
+>       msg: 'Input should be a valid list',
+>       input: [Object],
+>       url: 'https://errors.pydantic.dev/2.6/v/list_type'
+>     }
+bash: type:: command not found
+bash: loc:: command not found
+bash: msg:: command not found
+bash: input:: command not found
+bash: url:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  ]
+bash: ]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B}
+bash: syntax error near unexpected token `}'
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Processing asset: i-077640c1c0aa3f1b6
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Creating new asset: i-077640c1c0aa3f1b6
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Request payload: {
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "UniqueId": "i-077640c1c0aa3f1b6",
+bash: UniqueId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "IsStale": false,
+bash: IsStale:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "Tags": {
+bash: Tags:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "Name": "AISPI Backend API"
+bash: Name:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  },
+bash: },: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "InstanceId": "i-077640c1c0aa3f1b6",
+bash: InstanceId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "InstanceType": "t3.micro",
+bash: InstanceType:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "State": "running",
+bash: State:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "VpcId": "vpc-0b322ab881b1d5555",
+bash: VpcId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "SubnetId": "subnet-0ca75e17839b044df",
+bash: SubnetId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "SecurityGroups": [
+bash: SecurityGroups:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "sg-07d6ed7b15f5e7f32"
+bash: sg-07d6ed7b15f5e7f32: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  ]
+bash: ]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B}
+bash: syntax error near unexpected token `}'
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Asset creation response: 200 {
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  detail: [
+bash: detail:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    {
+>       type: 'list_type',
+>       loc: [Array],
+>       msg: 'Input should be a valid list',
+>       input: [Object],
+>       url: 'https://errors.pydantic.dev/2.6/v/list_type'
+>     }
+bash: type:: command not found
+bash: loc:: command not found
+bash: msg:: command not found
+bash: input:: command not found
+bash: url:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  ]
+bash: ]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B}
+bash: syntax error near unexpected token `}'
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Processing asset: i-051ac70635362ba71
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Creating new asset: i-051ac70635362ba71
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Request payload: {
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "UniqueId": "i-051ac70635362ba71",
+bash: UniqueId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "IsStale": false,
+bash: IsStale:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "Tags": {
+bash: Tags:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "Name": "Dev01"
+bash: Name:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  },
+bash: },: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "InstanceId": "i-051ac70635362ba71",
+bash: InstanceId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "InstanceType": "t3.large",
+bash: InstanceType:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "State": "running",
+bash: State:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "VpcId": "vpc-0b322ab881b1d5555",
+bash: VpcId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "SubnetId": "subnet-0ca75e17839b044df",
+bash: SubnetId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "SecurityGroups": [
+bash: SecurityGroups:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "sg-0499cce19c1bafcd1"
+bash: sg-0499cce19c1bafcd1: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  ]
+bash: ]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B}
+bash: syntax error near unexpected token `}'
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Asset creation response: 200 {
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  detail: [
+bash: detail:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    {
+>       type: 'list_type',
+>       loc: [Array],
+>       msg: 'Input should be a valid list',
+>       input: [Object],
+>       url: 'https://errors.pydantic.dev/2.6/v/list_type'
+>     }
+bash: type:: command not found
+bash: loc:: command not found
+bash: msg:: command not found
+bash: input:: command not found
+bash: url:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  ]
+bash: ]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B}
+bash: syntax error near unexpected token `}'
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Processing asset: i-0f6008fe254a06978
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Creating new asset: i-0f6008fe254a06978
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Request payload: {
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "UniqueId": "i-0f6008fe254a06978",
+bash: UniqueId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "IsStale": false,
+bash: IsStale:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "Tags": {
+bash: Tags:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "eksctl.io/v1alpha2/nodegroup-name": "api-gateway-ng",
+bash: eksctl.io/v1alpha2/nodegroup-name:: No such file or directory
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "alpha.eksctl.io/eksctl-version": "0.206.0-dev+238b73556.2025-03-23T08:01:42Z",
+bash: alpha.eksctl.io/eksctl-version:: No such file or directory
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "aws:ec2launchtemplate:version": "1",
+bash: aws:ec2launchtemplate:version:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "eksctl.cluster.k8s.io/v1alpha1/cluster-name": "fortifai-cluster",
+bash: eksctl.cluster.k8s.io/v1alpha1/cluster-name:: No such file or directory
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "Name": "fortifai-cluster-api-gateway-ng-Node",
+bash: Name:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "alpha.eksctl.io/nodegroup-name": "api-gateway-ng",
+bash: alpha.eksctl.io/nodegroup-name:: No such file or directory
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "aws:cloudformation:stack-name": "eksctl-fortifai-cluster-nodegroup-api-gateway-ng",
+bash: aws:cloudformation:stack-name:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "alpha.eksctl.io/nodegroup-type": "unmanaged",
+bash: alpha.eksctl.io/nodegroup-type:: No such file or directory
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "aws:autoscaling:groupName": "eksctl-fortifai-cluster-nodegroup-api-gateway-ng-NodeGroup-pxxPFjDwvEcd",
+bash: aws:autoscaling:groupName:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "aws:cloudformation:logical-id": "NodeGroup",
+bash: aws:cloudformation:logical-id:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "kubernetes.io/cluster/fortifai-cluster": "owned",
+bash: kubernetes.io/cluster/fortifai-cluster:: No such file or directory
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "aws:cloudformation:stack-id": "arn:aws:cloudformation:eu-north-1:715841361707:stack/eksctl-fortifai-cluster-nodegroup-api-gateway-ng/402741d0-0c10-11f0-a0a3-06ed40383891",
+bash: aws:cloudformation:stack-id:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "aws:ec2launchtemplate:id": "lt-0623c864e8c038d9c",
+bash: aws:ec2launchtemplate:id:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "aws:eks:cluster-name": "fortifai-cluster",
+bash: aws:eks:cluster-name:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "alpha.eksctl.io/cluster-name": "fortifai-cluster"
+bash: alpha.eksctl.io/cluster-name:: No such file or directory
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  },
+bash: },: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "InstanceId": "i-0f6008fe254a06978",
+bash: InstanceId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "InstanceType": "t3.medium",
+bash: InstanceType:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "State": "running",
+bash: State:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "VpcId": "vpc-034298fd0c2b97fa3",
+bash: VpcId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "SubnetId": "subnet-04a8620da82004f27",
+bash: SubnetId:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  "SecurityGroups": [
+bash: SecurityGroups:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "sg-08626a3226dbf4a95",
+bash: sg-08626a3226dbf4a95,: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    "sg-0b955c7130b5721fe"
+bash: sg-0b955c7130b5721fe: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  ]
+bash: ]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B}
+bash: syntax error near unexpected token `}'
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Asset creation response: 200 {
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  detail: [
+bash: detail:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B    {
+>       type: 'list_type',
+>       loc: [Array],
+>       msg: 'Input should be a valid list',
+>       input: [Object],
+>       url: 'https://errors.pydantic.dev/2.6/v/list_type'
+>     }
+bash: type:: command not found
+bash: loc:: command not found
+bash: msg:: command not found
+bash: input:: command not found
+bash: url:: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B  ]
+bash: ]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B}
+bash: syntax error near unexpected token `}'
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;B[ec2] Processed 5 assets from AWS...
+bash: [ec2]: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;BCompleted sync for ec2
+bash: Completed: command not found
+]633;A.venvHiliks-MacBook-Pro:scripts hilikstein$ ]633;BAll assets synced successfully
