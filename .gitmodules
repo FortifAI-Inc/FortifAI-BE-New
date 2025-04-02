@@ -13,3 +13,6 @@
 [submodule "fortifai"]
 	path = fortifai
 	url = https://github.com/FortifAI-Inc/fortifai.git
+[submodule "AnomalyDetection"]
+	path = AnomalyDetection
+	url = https://github.com/FortifAI-Inc/AnomalyDetection.git
