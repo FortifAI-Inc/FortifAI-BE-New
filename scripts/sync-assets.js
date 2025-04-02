@@ -343,6 +343,7 @@ async function getSubnets(nextToken = null) {
             description: `Subnet ${subnet.SubnetId}`,
             metadata: {
                 vpc_id: subnet.VpcId,
+                subnet_id: subnet.SubnetId,
                 cidr_block: subnet.CidrBlock,
                 availability_zone: subnet.AvailabilityZone,
                 state: subnet.State,
