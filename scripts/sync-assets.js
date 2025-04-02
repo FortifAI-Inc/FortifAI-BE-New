@@ -1,4 +1,4 @@
-const { EC2Client, DescribeInstancesCommand, DescribeVpcsCommand, DescribeSubnetsCommand, DescribeSecurityGroupsCommand } = require('@aws-sdk/client-ec2');
+const { EC2Client, DescribeInstancesCommand, DescribeVpcsCommand, DescribeSubnetsCommand, DescribeSecurityGroupsCommand, DescribeInternetGatewaysCommand } = require('@aws-sdk/client-ec2');
 const { S3Client, ListBucketsCommand, GetBucketLocationCommand } = require('@aws-sdk/client-s3');
 const { IAMClient, ListRolesCommand, ListUsersCommand, ListPoliciesCommand } = require('@aws-sdk/client-iam');
 const { CloudWatchClient, ListMetricsCommand } = require('@aws-sdk/client-cloudwatch');
@@ -107,7 +107,8 @@ const AssetType = {
     IAMUser: 'user',
     IAMPolicy: 'iam_policy',
     KMSKey: 'kms_key',
-    CloudWatchMetric: 'cloudwatch_metric'
+    CloudWatchMetric: 'cloudwatch_metric',
+    IGW: 'igw'
 };
 
 // Generic sync function with pagination and chunking
@@ -275,7 +276,9 @@ async function getEC2Instances(nextToken = null) {
                 description: `EC2 Instance ${instance.InstanceId}`,
                 metadata: {
                     vpc_id: instance.VpcId || null,
+                    VpcId: instance.VpcId || null,
                     subnet_id: instance.SubnetId || null,
+                    SubnetId: instance.SubnetId || null,
                     security_groups: instance.SecurityGroups?.map(sg => sg.GroupId) || []
                 },
                 is_stale: false,
@@ -311,7 +314,9 @@ async function getVPCs(nextToken = null) {
             metadata: {
                 cidr_block: vpc.CidrBlock,
                 state: vpc.State,
-                is_default: vpc.IsDefault
+                is_default: vpc.IsDefault,
+                unique_id: vpc.VpcId,
+                vpc_id: vpc.VpcId
             },
             is_stale: false,
             tags: convertTags(vpc.Tags)
@@ -543,6 +548,35 @@ async function getCloudWatchMetrics(nextToken = null) {
     };
 }
 
+async function getIGWs(nextToken = null) {
+    const params = { MaxResults: 100 };
+    if (nextToken) params.NextToken = nextToken;
+    
+    const data = await ec2Client.send(new DescribeInternetGatewaysCommand(params));
+    
+    const igws = data.InternetGateways.map(igw => {
+        return {
+            asset_type: 'igw',
+            unique_id: igw.InternetGatewayId,
+            name: igw.Tags?.find(tag => tag.Key === 'Name')?.Value || igw.InternetGatewayId,
+            description: `Internet Gateway ${igw.InternetGatewayId}`,
+            metadata: {
+                internet_gateway_id: igw.InternetGatewayId,
+                state: igw.State,
+                vpc_id: igw.Attachments?.[0]?.VpcId || null,
+                VpcId: igw.Attachments?.[0]?.VpcId || null
+            },
+            is_stale: false,
+            tags: convertTags(igw.Tags)
+        };
+    });
+    
+    return {
+        assets: igws,
+        token: data.NextToken
+    };
+}
+
 // Main
 async function main() {
     try {
@@ -557,6 +591,7 @@ async function main() {
         await syncAssets(AssetType.IAMRole, getIAMRoles);
         await syncAssets(AssetType.IAMUser, getIAMUsers);
         await syncAssets(AssetType.IAMPolicy, getIAMPolicies);
+        await syncAssets(AssetType.IGW, getIGWs);
         
         console.log('All assets synced successfully');
     } catch (error) {
