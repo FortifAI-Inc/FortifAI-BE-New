@@ -10,3 +10,6 @@
 [submodule "data-layer"]
 	path = data-layer
 	url = https://github.com/FortifAI-Inc/data-layer.git
+[submodule "fortifai"]
+	path = fortifai
+	url = https://github.com/FortifAI-Inc/fortifai.git
