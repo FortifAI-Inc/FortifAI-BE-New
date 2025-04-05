@@ -18,10 +18,10 @@ build_and_push() {
     
     # Build the Docker image
     cd $SERVICE
-    docker build -t $REGISTRY/fortifai/$SERVICE:latest .
+    docker build --platform linux/amd64 -t $REGISTRY/$SERVICE:latest .
     
     # Push to ECR
-    docker push $REGISTRY/fortifai/$SERVICE:latest
+    docker push $REGISTRY/$SERVICE:latest
     
     # Go back to parent directory
     cd ..
@@ -35,13 +35,11 @@ echo "Starting deployment process..."
 # Data Access Service
 build_and_push "data-access-service"
 
-# Analytics Service
-build_and_push "analytics-service"
+# Data Layer Service
+build_and_push "data-layer"
 
-# IAM Service (if it has a Dockerfile)
-if [ -f "iam/Dockerfile" ]; then
-    build_and_push "iam"
-fi
+# API Gateway Service
+build_and_push "api-gateway"
 
 # Update Kubernetes deployments
 echo "Updating Kubernetes deployments..."
@@ -64,15 +62,14 @@ apply_k8s() {
 }
 
 # Apply Kubernetes configurations for each service
-apply_k8s "data-access-service" "data-access"
-apply_k8s "analytics-service" "analytics"
-
-if [ -f "iam/k8s/deployment.yaml" ]; then
-    apply_k8s "iam" "iam"
-fi
+apply_k8s "data-layer" "data-layer"
+apply_k8s "api-gateway" "api-gateway"
+apply_k8s "data-access-service" "microservices"
+apply_k8s "ai-detector" "microservices"
+apply_k8s "assets-monitor" "microservices"
 
 echo "Deployment completed successfully!"
 
 # Watch pods status
 echo "Watching pods status..."
-kubectl get pods -A -w | grep -E 'data-access|analytics|iam' 
+kubectl get pods -A -w | grep -E 'data-access|api-gateway' 
