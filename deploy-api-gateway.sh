@@ -4,12 +4,13 @@
 set -e
 
 # AWS ECR Registry
-REGISTRY="715841361707.dkr.ecr.eu-north-1.amazonaws.com"
-REGION="eu-north-1"
+AWS_ACCOUNT_ID="715841361707"
+AWS_REGION="eu-north-1"
+REGISTRY="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
 
 # Login to ECR
 echo "Logging in to Amazon ECR..."
-aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $REGISTRY
+aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin $REGISTRY
 
 # Build and push API Gateway Service
 echo "Building and pushing api-gateway..."
