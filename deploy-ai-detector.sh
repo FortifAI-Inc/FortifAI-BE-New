@@ -16,7 +16,7 @@ echo "Building and pushing ai-detector..."
 
 # Build the Docker image
 cd microservices/ai-detector
-docker build --platform linux/amd64 -t $REGISTRY/ai-detector:latest .
+docker build --no-cache --platform linux/amd64 -t $REGISTRY/ai-detector:latest .
 
 # Push to ECR
 docker push $REGISTRY/ai-detector:latest
