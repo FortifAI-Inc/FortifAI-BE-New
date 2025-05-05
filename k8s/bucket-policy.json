@@ -1,0 +1,34 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "Service": [
+                    "vpc-flow-logs.amazonaws.com",
+                    "delivery.logs.amazonaws.com",
+                    "ec2.amazonaws.com"
+                ]
+            },
+            "Action": [
+                "s3:PutObject",
+                "s3:GetBucketAcl"
+            ],
+            "Resource": [
+                "arn:aws:s3:::fortifai-data",
+                "arn:aws:s3:::fortifai-data/*"
+            ],
+            "Condition": {
+                "StringEquals": {
+                    "aws:SourceAccount": "715841361707"
+                },
+                "ArnLike": {
+                    "aws:SourceArn": [
+                        "arn:aws:ec2:eu-north-1:715841361707:*",
+                        "arn:aws:logs:eu-north-1:715841361707:*"
+                    ]
+                }
+            }
+        }
+    ]
+} 
