@@ -1,38 +1,68 @@
 #!/bin/bash
 
-# Create policy document
-cat > flow-logs-policy.json << 'EOL'
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "ec2:CreateFlowLogs",
-                "ec2:DeleteFlowLogs",
-                "ec2:DescribeFlowLogs",
-                "ec2:DescribeNetworkInterfaces",
-                "logs:CreateLogGroup",
-                "logs:CreateLogStream",
-                "logs:PutLogEvents",
-                "logs:DescribeLogGroups",
-                "logs:DescribeLogStreams",
-                "iam:GetRole",
-                "iam:CreateRole",
-                "iam:PutRolePolicy",
-                "iam:PassRole"
-            ],
-            "Resource": "*"
-        }
-    ]
-}
-EOL
+# Exit on error
+set -e
 
-# Put the inline policy
-aws iam put-role-policy \
-    --role-name fortifai-data-layer-s3-access \
-    --policy-name FlowLogsAccess \
-    --policy-document file://flow-logs-policy.json
+# Colors for output
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
 
-# Clean up
-rm flow-logs-policy.json 
+echo -e "${YELLOW}Updating network policies to allow access to data-layer...${NC}"
+
+# Create a NetworkPolicy allowing access from microservices namespace to data-layer namespace
+cat <<EOF | kubectl apply -f -
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: allow-from-microservices
+  namespace: data-layer
+spec:
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          name: microservices
+  podSelector: {}
+  policyTypes:
+  - Ingress
+EOF
+
+# Label the microservices namespace
+kubectl label namespace microservices name=microservices --overwrite
+
+echo -e "${YELLOW}Granting service account permissions...${NC}"
+
+# Create a ClusterRole with necessary permissions
+cat <<EOF | kubectl apply -f -
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: data-layer-access
+rules:
+- apiGroups: [""]
+  resources: ["services"]
+  verbs: ["get", "list"]
+- apiGroups: [""]
+  resources: ["pods"]
+  verbs: ["get", "list"]
+EOF
+
+# Create a ClusterRoleBinding for the service account
+cat <<EOF | kubectl apply -f -
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: data-access-service-data-layer-access
+subjects:
+- kind: ServiceAccount
+  name: data-access-service
+  namespace: microservices
+roleRef:
+  kind: ClusterRole
+  name: data-layer-access
+  apiGroup: rbac.authorization.k8s.io
+EOF
+
+echo -e "${GREEN}Network policies and permissions updated successfully!${NC}"
+echo -e "${YELLOW}Note: You may need to restart your deployments for changes to take effect.${NC}" 
