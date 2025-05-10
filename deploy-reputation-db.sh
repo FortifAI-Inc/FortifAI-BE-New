@@ -42,9 +42,13 @@ echo "Applying Kubernetes deployments..."
 kubectl apply -f microservices/${REPO_NAME}/service.yaml
 kubectl apply -f microservices/${REPO_NAME}/deployment.yaml
 
-# Wait for pod to be running
-echo "Waiting for pod to be ready..."
-kubectl wait --for=condition=Ready pods -l app=${REPO_NAME} -n microservices --timeout=180s
+# Force a rollout restart to ensure the new image is used
+echo "Forcing deployment rollout..."
+kubectl rollout restart deployment/${REPO_NAME} -n microservices
+
+# Wait for rollout to complete
+echo "Waiting for rollout to complete..."
+kubectl rollout status deployment/${REPO_NAME} -n microservices --timeout=180s
 
 echo "Deployment complete for ${REPO_NAME}!"
 echo "You can check the service status with: kubectl get svc ${REPO_NAME}-svc -n microservices"
