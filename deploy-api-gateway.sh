@@ -33,8 +33,8 @@ echo "Updating Kubernetes deployment for api-gateway..."
 # Create namespace if it doesn't exist
 kubectl create namespace api-gateway --dry-run=client -o yaml | kubectl apply -f -
 
-# Apply deployment
-kubectl apply -f api-gateway/k8s/deployment.yaml
+# Apply deployment with environment variables substituted
+envsubst < api-gateway/k8s/deployment.yaml | kubectl apply -f -
 
 # Delete pods to force pull of new images
 kubectl delete pods -n api-gateway -l app=api-gateway --force
