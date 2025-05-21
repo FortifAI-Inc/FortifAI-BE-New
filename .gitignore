@@ -9,3 +9,5 @@ microservices
 .env.production.local
 .env.development
 .env.test
+node_modules/
+package-lock.json
