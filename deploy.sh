@@ -17,14 +17,18 @@ build_and_push() {
     echo "Building and pushing $SERVICE..."
     
     # Build the Docker image
-    cd $SERVICE
+    if [ "$SERVICE" = "data-layer" ]; then
+        cd data-layer
+    else
+        cd microservices/$SERVICE
+    fi
     docker build --platform linux/amd64 -t $REGISTRY/$SERVICE:latest .
     
     # Push to ECR
     docker push $REGISTRY/$SERVICE:latest
     
     # Go back to parent directory
-    cd ..
+    cd ../..
     
     echo "$SERVICE build and push completed"
 }
@@ -55,7 +59,11 @@ apply_k8s() {
     kubectl create namespace $NAMESPACE --dry-run=client -o yaml | kubectl apply -f -
     
     # Apply deployment
-    kubectl apply -f $SERVICE/k8s/deployment.yaml
+    if [ "$SERVICE" = "data-layer" ]; then
+        kubectl apply -f data-layer/k8s/deployment.yaml
+    else
+        kubectl apply -f microservices/$SERVICE/k8s/deployment.yaml
+    fi
     
     # Delete pods to force pull of new images
     kubectl delete pods -n $NAMESPACE -l app=$SERVICE --force
