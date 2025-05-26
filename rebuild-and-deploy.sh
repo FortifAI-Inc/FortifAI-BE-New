@@ -46,6 +46,7 @@ services=(
     "data-access-service:microservices/data-access-service"
     "ai-detector:microservices/ai-detector"
     "assets-monitor:microservices/assets-monitor"
+    "logs-collector:microservices/logs-collector"
     "data-layer:data-layer"
     "api-gateway:api-gateway"
 )
