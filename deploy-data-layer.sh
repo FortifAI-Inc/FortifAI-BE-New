@@ -1,4 +1,6 @@
 #!/bin/bash
+SCRIPT_DIR=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" &> /dev/null && pwd)
+cd "$SCRIPT_DIR"
 set -e
 REGISTRY="715841361707.dkr.ecr.eu-north-1.amazonaws.com"
 REGION="eu-north-1"
@@ -6,7 +8,7 @@ echo "Logging in to Amazon ECR..."
 aws ecr get-login-password --region $REGION | docker login --username AWS --password-stdin $REGISTRY
 echo "Building and pushing data-layer..."
 cd data-layer
-docker build --platform linux/amd64 -t $REGISTRY/data-layer:latest .
+docker build --no-cache --platform linux/amd64 -t $REGISTRY/data-layer:latest .
 docker push $REGISTRY/data-layer:latest
 cd ..
 echo "Updating Kubernetes deployment for data-layer..."
