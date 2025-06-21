@@ -35,6 +35,10 @@ echo "Updating Kubernetes deployment for api-gateway..."
 # Create namespace if it doesn't exist
 kubectl create namespace api-gateway --dry-run=client -o yaml | kubectl apply -f -
 
+# Export environment variables for envsubst
+export AWS_ACCOUNT_ID
+export AWS_REGION
+
 # Apply deployment with environment variables substituted
 envsubst < api-gateway/k8s/deployment.yaml | kubectl apply -f -
 
